@@ -1,15 +1,15 @@
-package chap02;
+package lambda;
 
-import chap02.behavior.UserPredicate;
-import chap02.behavior_impl.UserAgePredicateImpl;
-import chap02.behavior_impl.UserNamePredicateImpl;
-import chap02.behavior_impl.UserRolePredicateImpl;
-import chap02.domain.Role;
-import chap02.domain.User;
+import lambda.behavior.UserPredicate;
+import lambda.behavior_impl.UserAgePredicateImpl;
+import lambda.behavior_impl.UserNamePredicateImpl;
+import lambda.behavior_impl.UserRolePredicateImpl;
+import lambda.domain.Role;
+import lambda.domain.User;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.io.Serializable;
+import java.util.*;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class Main {
@@ -29,11 +29,25 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        original();
-        behaviorParameter();
-        anonymousClass();
-        useLambda();
-        usePredicate();
+//        original();
+//        behaviorParameter();
+//        anonymousClass();
+//        useLambda();
+//        usePredicate();
+        methodReference();
+    }
+
+    private static void methodReference() {
+        users.sort((user1, user2) -> user1.getAge() - user2.getAge());
+        users.sort(new Comparator<User>() {
+            @Override
+            public int compare(User user1, User user2) {
+                return user1.getAge() - user2.getAge();
+            }
+        });
+        System.out.println("users = " + users);
+        users.sort(Comparator.comparing(User::getAge).reversed());
+        System.out.println("users = " + users);
     }
 
     private static void original() {

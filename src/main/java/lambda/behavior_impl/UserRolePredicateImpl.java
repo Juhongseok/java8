@@ -1,8 +1,8 @@
-package chap02.behavior_impl;
+package lambda.behavior_impl;
 
-import chap02.behavior.UserPredicate;
-import chap02.domain.Role;
-import chap02.domain.User;
+import lambda.behavior.UserPredicate;
+import lambda.domain.Role;
+import lambda.domain.User;
 
 public class UserRolePredicateImpl implements UserPredicate {
     @Override

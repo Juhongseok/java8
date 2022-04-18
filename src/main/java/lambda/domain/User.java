@@ -1,4 +1,4 @@
-package chap02.domain;
+package lambda.domain;
 
 import lombok.*;
 

@@ -1,7 +1,7 @@
-package chap02.behavior_impl;
+package lambda.behavior_impl;
 
-import chap02.behavior.UserPredicate;
-import chap02.domain.User;
+import lambda.behavior.UserPredicate;
+import lambda.domain.User;
 
 public class UserAgePredicateImpl implements UserPredicate {
     @Override
